@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑页面</title>
+</head>
+<body>
+    <form action="{{ url_for('todo.update', todo_id=todo.id) }}" method="post">
+        <input name="task" placeholder="请重新输入..." value="{{ todo.task }}">
+        <button>提交</button>
+    </form>
+</body>
+</html>

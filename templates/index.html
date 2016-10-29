@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待办事项</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="/static/todo.js"></script>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-input">
+        <input id="id-todo-input" name="task" placeholder="请输入...">
+        <button id="id-todo-button">添加</button>
+    </div>
+    <div class="todo-container">
+        {% for t in ts %}
+        <div class="todo-cell" data-id="{{ t.id }}">
+          <span class="todo-task">{{ t.task }}</span>
+          <a href="#" class="todo-delete">删除</a>
+          <a href="#" class="todo-edit">编辑</a>
+          <div class="todo-edit-cell hide">
+            <input class="todo-update-input">
+            <button class="todo-update-button">更新</button>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
